@@ -330,6 +330,3 @@ server <- function(input, output) {
 
 # Run the application 
 shinyApp(ui = ui, server = server)
-
-# library(rsconnect)
-# rsconnect::deployApp('D:/yuan/Frontier_chilling twigs_Annette/project - chilling twigs/Twig Shiny')
