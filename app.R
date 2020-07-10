@@ -7,11 +7,14 @@ library(DT)
 library(dplyr)
 library(ggplot2)
 library(ggrepel)
-library(rdwd)
+library(remotes)
 rdwd::updateRdwd() # to update the latest data if rdwd package doesn't work properly
+library(rdwd)
 
 
-df.station <- fread("Station_DWD.csv")
+
+
+df.station <- fread("Station_DWD.csv", encoding = "UTF-8")
 df.station$startyear <- as.numeric(substr(df.station$von_datum, 1, 4))
 df.station$endyear <- as.numeric(substr(df.station$bis_datum, 1, 4))
 df.station$choice <- paste0(df.station$Stationsname, " (", df.station$Stations_id, ")", sep = "")
